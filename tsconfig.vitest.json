@@ -1,9 +1,13 @@
+// tsconfig.vitest.json
 {
-  "extends": "./tsconfig.app.json",
+  "extends": "./tsconfig.base.json",
   "exclude": [],
   "compilerOptions": {
     "composite": true,
     "lib": [],
-    "types": ["node", "jsdom"]
+    "types": [
+      "node",
+      "jsdom"
+    ]
   }
 }
