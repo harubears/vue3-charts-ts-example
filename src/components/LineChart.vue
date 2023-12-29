@@ -1,13 +1,16 @@
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
-import { Chart, Grid, Line as LineChartComponent  } from 'vue3-charts'
+
+// Using aliases to avoid ESLint error:
+// 'no-reserved-component-names'
+import { Chart, Grid, Tooltip, Line as LineChartComponent } from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
 
 import { plByMonth } from '@/data'
 
 export default defineComponent({
     name: 'LineChart',
-    components: { Chart, Grid, LineChartComponent },
+    components: { Chart, Grid, Tooltip, LineChartComponent },
     setup() {
         const data = ref(plByMonth)
         const direction: Ref<Direction> = ref('horizontal')
