@@ -3,7 +3,12 @@ import { defineComponent, ref, Ref } from 'vue'
 
 // Using aliases to avoid ESLint error:
 // 'no-reserved-component-names'
-import { Chart, Grid, Tooltip, Line as LineChartComponent } from 'vue3-charts'
+import { 
+    Chart, 
+    Grid, 
+    Tooltip, 
+    Line as LineChartComponent
+} from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
 
 import { plByMonth } from '@/data'
