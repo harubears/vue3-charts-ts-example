@@ -57,9 +57,9 @@ export default defineComponent({
 
         <template #widgets>
             <Tooltip borderColor="#48CAE4" :config="{
-                pl: { color: '#90e0ef' },
-                avg: { color: '#0096c7' },
-                inc: { color: '#48cae4' }
+                pl: { color: '#FF6347' },
+                avg: { color: '#3CB371' },
+                inc: { color: '#1E90FF' }
             }" />
         </template>
 

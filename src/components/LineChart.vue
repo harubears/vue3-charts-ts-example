@@ -55,18 +55,19 @@ export default defineComponent({
         <template #layers>
             <!-- Generates a dashed line with 2-pixel dashes and 2-pixel gaps as a Grid -->
             <Grid strokeDasharray="2,2" />
-            <!-- Primary Line -->
-            <LineChartComponent :dataKeys="['name', 'pl']" />
-            <!-- Secondary Line -->
-            <LineChartComponent :dataKeys="['name', 'avg']" :lineStyle="{ stroke: 'red' }" type="step" />
+
+            <LineChartComponent :dataKeys="['name', 'pl']"  :lineStyle="{ stroke: '#FF6347' }" />
+            <LineChartComponent :dataKeys="['name', 'avg']" :lineStyle="{ stroke: '#3CB371' }" type="step" />
+            <LineChartComponent :dataKeys="['name', 'inc']" :lineStyle="{ stroke: '#1E90FF' }" type="monotone" />
+
         </template>
 
         <template #widgets>
             <Tooltip borderColor="#48CAE4" :config="{
                 name: { hide: true },
-                pl: { color: '#0077b6' },
-                avg: { label: 'averange', color: 'red' },
-                inc: { hide: true }
+                pl: { color: '#FF6347' },
+                avg: { label: 'averange', color: '#3CB371' },
+                inc: { color: '#1E90FF' }
             }" />
         </template>
 
