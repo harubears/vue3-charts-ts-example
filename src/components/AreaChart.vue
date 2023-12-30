@@ -6,6 +6,7 @@ import { defineComponent, ref, Ref } from 'vue'
 import {
     Chart,
     Grid,
+    Tooltip,
     Marker as ChartMarker,
     Line as LineChartComponent,
     Area as AreaChartComponent
@@ -16,7 +17,7 @@ import { plByMonth } from '@/data'
 
 export default defineComponent({
     name: 'LineChart',
-    components: { Chart, Grid, ChartMarker, LineChartComponent, AreaChartComponent },
+    components: { Chart, Grid, Tooltip, ChartMarker, LineChartComponent, AreaChartComponent },
     setup() {
         const data = ref(plByMonth)
         const direction: Ref<Direction> = ref('horizontal')
@@ -50,13 +51,11 @@ export default defineComponent({
         <template #layers>
             <Grid strokeDasharray="2,2" />
             <AreaChartComponent :dataKeys="['name', 'pl']" type="monotone" :areaStyle="{ fill: 'url(#grad)' }" />
-            <LineChartComponent :dataKeys="['name', 'pl']" type="monotone" :lineStyle="{
-                stroke: '#9f7aea'
-            }" />
+            <LineChartComponent :dataKeys="['name', 'pl']" type="monotone" :lineStyle="{ stroke: '#FF6347' }" />
             <ChartMarker :value="1000" label="Mean." color="green" :strokeWidth="2" strokeDasharray="6 6" />
             <defs>
                 <linearGradient id="grad" gradientTransform="rotate(90)">
-                    <stop offset="0%" stop-color="#be90ff" stop-opacity="1" />
+                    <stop offset="0%" stop-color="#FF6347" stop-opacity="1" />
                     <stop offset="100%" stop-color="white" stop-opacity="0.4" />
                 </linearGradient>
             </defs>
@@ -64,7 +63,7 @@ export default defineComponent({
 
         <template #widgets>
             <Tooltip borderColor="#48CAE4" :config="{
-                pl: { color: '#9f7aea' },
+                pl: { color: '#FF6347' },
                 avg: { hide: true },
                 inc: { hide: true }
             }" />
