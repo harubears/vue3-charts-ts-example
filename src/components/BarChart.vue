@@ -49,10 +49,10 @@ export default defineComponent({
 
         <template #layers>
             <Grid strokeDasharray="2,2" />
-            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347' }" /> <!-- Tomato -->
-            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" /> <!-- Medium Sea Green -->
-            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" /> <!-- Dodger Blue -->
-            <ChartMarker :value="1000" label="Avg." color="#e76f51" :strokeWidth="2" strokeDasharray="6 6" />
+            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347' }" />
+            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" />
+            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" />
+            <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
         </template>
 
         <template #widgets>
