@@ -64,7 +64,8 @@ export default defineComponent({
             <AreaChartComponent :dataKeys="['name', 'inc']" type="monotone" :areaStyle="{ fill: 'url(#grad-inc)' }" />
             <LineChartComponent :dataKeys="['name', 'inc']" type="monotone" :lineStyle="{ stroke: '#1E90FF' }" />
 
-            <ChartMarker :value="1000" label="Mean." color="green" :strokeWidth="2" strokeDasharray="6 6" />
+            <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
+
             <defs>
                 <linearGradient id="grad-pl" gradientTransform="rotate(90)">
                     <stop offset="0%" stop-color="#FF6347" stop-opacity="1" />

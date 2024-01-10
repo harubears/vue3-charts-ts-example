@@ -52,7 +52,7 @@ export default defineComponent({
             <Grid strokeDasharray="2,2" />
             <AreaChartComponent :dataKeys="['name', 'pl']" type="monotone" :areaStyle="{ fill: 'url(#grad)' }" />
             <LineChartComponent :dataKeys="['name', 'pl']" type="monotone" :lineStyle="{ stroke: '#FF6347' }" />
-            <ChartMarker :value="1000" label="Mean." color="green" :strokeWidth="2" strokeDasharray="6 6" />
+            <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
             <defs>
                 <linearGradient id="grad" gradientTransform="rotate(90)">
                     <stop offset="0%" stop-color="#FF6347" stop-opacity="1" />

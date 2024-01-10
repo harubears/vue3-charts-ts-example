@@ -57,7 +57,7 @@ export default defineComponent({
             <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" /> <!-- Medium Sea Green -->
             <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" /> <!-- Dodger Blue -->
             <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
-            </template>
+        </template>
 
         <template #widgets>
             <Tooltip borderColor="#48CAE4" :config="{
