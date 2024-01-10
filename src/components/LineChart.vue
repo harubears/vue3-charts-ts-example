@@ -1,13 +1,12 @@
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
 
-// Using aliases to avoid ESLint error:
-// 'no-reserved-component-names'
 import { 
     Chart, 
     Grid, 
     Tooltip, 
-    Line as LineChartComponent
+    Line as LineChartComponent,
+    Marker as ChartMarker,
 } from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
 
@@ -15,7 +14,7 @@ import { plByMonth } from '@/data'
 
 export default defineComponent({
     name: 'LineChart',
-    components: { Chart, Grid, Tooltip, LineChartComponent },
+    components: { Chart, Grid, Tooltip, LineChartComponent, ChartMarker },
     setup() {
         const data = ref(plByMonth)
         const direction: Ref<Direction> = ref('horizontal')
@@ -59,6 +58,7 @@ export default defineComponent({
             <LineChartComponent :dataKeys="['name', 'pl']"  :lineStyle="{ stroke: '#FF6347' }" />
             <LineChartComponent :dataKeys="['name', 'avg']" :lineStyle="{ stroke: '#3CB371' }" type="step" />
             <LineChartComponent :dataKeys="['name', 'inc']" :lineStyle="{ stroke: '#1E90FF' }" type="monotone" />
+            <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
 
         </template>
 
