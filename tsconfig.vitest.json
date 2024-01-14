@@ -1,7 +1,8 @@
-// tsconfig.vitest.json
 {
   "extends": "./tsconfig.base.json",
-  "exclude": [],
+  "exclude": [
+    "dist"
+  ],
   "compilerOptions": {
     "composite": true,
     "lib": [],
