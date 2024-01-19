@@ -1,15 +1,9 @@
 {
-  "extends": "./tsconfig.base.json",
-  "exclude": [
-    "dist"
-  ],
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
   "compilerOptions": {
     "composite": true,
     "lib": [],
-    "types": [
-      "node",
-      "jsdom",
-      "vite/client"
-    ]
+    "types": ["node", "jsdom"]
   }
 }
