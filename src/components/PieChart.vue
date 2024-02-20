@@ -32,16 +32,26 @@ export default defineComponent({
 
 <template>
     <Responsive class="w-full">
-        <template #main>
-            <Chart :direction="'circular'" :data="data" :axis="axis">
+        <template #main="{ width }">
+            <Chart direction="circular" :size="{ width, height: 400 }" :data="data" :margin="{
+                left: Math.round((width - 360) / 2),
+                top: 20,
+                right: 0,
+                bottom: 20
+            }" :axis="axis" :config="{ controlHover: false }">
                 <template #layers>
-                    <Pie :dataKeys="['name', 'pl']" :pie-style="{ innerRadius: 100, padAngle: 0.05 }" />
-                    </template>
-
+                    <Pie :dataKeys="['name', 'pl']" :pie-style="{
+                        innerRadius: 100,
+                        padAngle: 0.02,
+                        cornerRadius: 10,
+                        colors: ['red', 'orange', 'brown', 'green', 'blue', 'purple', 'pink']
+                    }" />
+                </template>
                 <template #widgets>
-                    <Tooltip borderColor="#48CAE4" :config="{
+                    <Tooltip :config="{
+                        name: {},
                         avg: { hide: true },
-                        pl: { label: 'pl value', color: '#FF6347' },
+                        pl: { label: 'value' },
                         inc: { hide: true }
                     }" hideLine />
                 </template>

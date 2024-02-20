@@ -1,17 +1,13 @@
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
-
-// Using aliases to avoid ESLint error:
-// 'no-reserved-component-names'
-import { 
-    Chart, 
-    Grid, 
-    Tooltip, 
-    Marker as ChartMarker, 
+import {
+    Chart,
+    Grid,
+    Tooltip,
+    Marker as ChartMarker,
     Bar
 } from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
-
 import { plByMonth } from '@/data'
 
 export default defineComponent({
@@ -49,9 +45,9 @@ export default defineComponent({
 
         <template #layers>
             <Grid strokeDasharray="2,2" />
-            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347' }" />
-            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" />
-            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" />
+            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347', opacity: 0.3 }" />
+            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" :gap=10 :max-width=10 />
+            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" :gap=1 :max-width=30 />
             <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
         </template>
 
@@ -65,3 +61,4 @@ export default defineComponent({
 
     </Chart>
 </template>
+

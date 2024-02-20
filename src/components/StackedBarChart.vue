@@ -1,17 +1,13 @@
 <script lang="ts">
 import { defineComponent, ref, Ref, provide } from 'vue'
-
-// Using aliases to avoid ESLint error:
-// 'no-reserved-component-names'
 import {
     Chart,
     Grid,
     Tooltip,
     Marker as ChartMarker,
-    Bar,
+    Bar
 } from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
-
 import { plByMonth } from '@/data'
 
 export default defineComponent({
@@ -41,7 +37,8 @@ export default defineComponent({
 
         provide('layerProps', {
             stacked: true, // enable stacking
-        });
+            maxWidth: 20, // set the maximum width of the bar
+        })
 
         return { data, direction, margin, axis }
     }
@@ -49,13 +46,13 @@ export default defineComponent({
 </script>
 
 <template>
-    <Chart :size="{ width: 500, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis" >
+    <Chart :size="{ width: 500, height: 420 }" :data="data" :margin="margin" :direction="direction" :axis="axis">
 
         <template #layers>
             <Grid strokeDasharray="2,2" />
-            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347' }" /> <!-- Tomato -->
-            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" /> <!-- Medium Sea Green -->
-            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" /> <!-- Dodger Blue -->
+            <Bar :dataKeys="['name', 'pl']" :barStyle="{ fill: '#FF6347' }" :gap=40 />
+            <Bar :dataKeys="['name', 'avg']" :barStyle="{ fill: '#3CB371' }" :gap=40 />
+            <Bar :dataKeys="['name', 'inc']" :barStyle="{ fill: '#1E90FF' }" :gap=40 />
             <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
         </template>
 
@@ -69,3 +66,4 @@ export default defineComponent({
 
     </Chart>
 </template>
+

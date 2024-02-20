@@ -1,8 +1,5 @@
 <script lang="ts">
 import { defineComponent, ref, Ref } from 'vue'
-
-// Using aliases to avoid ESLint error:
-// 'no-reserved-component-names'
 import {
     Chart,
     Grid,
@@ -12,12 +9,14 @@ import {
     Area as AreaChartComponent
 } from 'vue3-charts'
 import { Direction, ChartAxis } from 'vue3-charts/src/types'
-
 import { plByMonth } from '@/data'
 
 export default defineComponent({
-    name: 'LineChart',
-    components: { Chart, Grid, Tooltip, ChartMarker, LineChartComponent, AreaChartComponent },
+    name: 'AreaChart',
+    components: {
+        Chart, Grid, Tooltip,
+        ChartMarker, LineChartComponent, AreaChartComponent
+    },
     setup() {
         const data = ref(plByMonth)
         const direction: Ref<Direction> = ref('horizontal')
@@ -51,12 +50,15 @@ export default defineComponent({
         <template #layers>
             <Grid strokeDasharray="2,2" />
             <AreaChartComponent :dataKeys="['name', 'pl']" type="monotone" :areaStyle="{ fill: 'url(#grad)' }" />
-            <LineChartComponent :dataKeys="['name', 'pl']" type="monotone" :lineStyle="{ stroke: '#FF6347' }" />
-            <ChartMarker :value="1200" label="Target" color="black" :strokeWidth="2" strokeDasharray="6 6" />
+            <LineChartComponent :dataKeys="['name', 'pl']" type="monotone" :lineStyle="{
+                stroke: '#9f7aea'
+            }" />
+            <ChartMarker :value="1000" label="Mean." color="green" :strokeWidth="2" strokeDasharray="6 6" />
             <defs>
                 <linearGradient id="grad" gradientTransform="rotate(90)">
-                    <stop offset="0%" stop-color="#FF6347" stop-opacity="1" />
-                    <stop offset="100%" stop-color="white" stop-opacity="0.4" />
+                    <stop offset="0%" stop-color="green" stop-opacity="1" />
+                    <stop offset="50%" stop-color="yellow" stop-opacity="1" />
+                    <stop offset="100%" stop-color="red" stop-opacity="1" />
                 </linearGradient>
             </defs>
         </template>
@@ -64,8 +66,8 @@ export default defineComponent({
         <template #widgets>
             <Tooltip borderColor="#48CAE4" :config="{
                 pl: { color: '#FF6347' },
-                avg: { hide: true },
-                inc: { hide: true }
+                avg: { color: '#3CB371' },
+                inc: { color: '#1E90FF' }
             }" />
         </template>
 
