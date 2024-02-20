@@ -10,7 +10,7 @@ This repository was created to share the actual example of the several charts us
 ## References
 
 - [Vue3-Charts](https://vue3charts.org/)
-- [harubears blog](https://harubears.com/series/vue3-charts-typescript/) TBD
+- [harubears blog]() TBD
 
 
 ## Screenshots
