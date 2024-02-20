@@ -1,52 +1,39 @@
 # vue3-charts-ts-example
 
-This template should help get you started developing with Vue 3 in Vite.
+English follows Japanese.
 
-## Recommended IDE Setup
+## Overview
+このリポジトリは `vue3-charts` を用いて具体的なグラフを作成した例を公開するために作成しました。 これらのコードについては、ブログ記事にて解説しています。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This repository was created to share the actual example of the several charts using `vue3-charts` library. My blog article mentions the details each charts wise.
 
-## Type Support for `.vue` Imports in TS
+## References
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [Vue3-Charts](https://vue3charts.org/)
+- [harubears blog](https://harubears.com/series/vue3-charts-typescript/) TBD
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Screenshots
 
-## Customize configuration
+You can see the screenshots in the following links.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## How to Use
 
-```sh
-npm install
-```
+To get started with `vue3-charts-ts-example`, follow these steps:
 
-### Compile and Hot-Reload for Development
+1. Clone the project:
+   ```shell
+   git clone https://github.com/harubears/vue3-charts-ts-example.git
 
-```sh
-npm run dev
-```
+1. Install the necessary dependencies:
+    ```shell
+    npm install
+    ```
+1. Start the development server and view the application in your browser:
+    ```shell
+    npm run dev
+    ```
 
-### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+For a more detailed guide and usage instructions, please visit the following lins.
